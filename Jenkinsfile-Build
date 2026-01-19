@@ -10,13 +10,6 @@ pipeline{
                 bat 'mvn clean install'
             }
         }
-        stage('Build docker image'){
-            steps{
-                         // Docker image name ::  devops-integration
-                         bat 'docker build -t employee-service-v2.0.0-snapshot:latest .'
-                         //bat 'docker build -t employee-service-v2.0.0-snapshot .'
-            }
-        }
 
         stage('Update DockerHub Credentials'){
              steps{
