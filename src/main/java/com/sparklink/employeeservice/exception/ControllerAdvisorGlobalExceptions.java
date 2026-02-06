@@ -36,7 +36,7 @@ public class ControllerAdvisorGlobalExceptions extends ResponseEntityExceptionHa
 	
 	//********************************* General Exceptions Start *********************************************//
 	
-	// Handle NullPonter Exception due to record not found 
+	// Handle NullPointer Exception due to record not found
 	@ExceptionHandler(RecordNotFoundNullPointerException.class)
 	public ResponseEntity<Object> handleRecordNotFoundException(RecordNotFoundNullPointerException rnfnpe, WebRequest request){
 		ExceptionResponse exceptionResponse= new ExceptionResponse(new Date(), rnfnpe.getMessage(), request.getDescription(false));  

@@ -1,7 +1,5 @@
 package com.sparklink.employeeservice.exception;
 
-
-
 public class EmployeeInfoByIDNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
