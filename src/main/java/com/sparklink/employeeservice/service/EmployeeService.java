@@ -72,16 +72,6 @@ public class EmployeeService {
 
 	// ****************** Calling from FrontController ********************** //
 
-	public List<Employee_Master> getAllEmployee() {
-		List<Employee_Master> employeeList = new ArrayList<>();
-		try{
-			 employeeList = employeeRepository.getAllEmployee();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		return employeeList;
-	}
-
 	@Deprecated
 	public List<Employee_Master> getEmployeeDetails() {
 		List<Employee_Master> employeeList = new ArrayList<>();
@@ -92,6 +82,21 @@ public class EmployeeService {
 		}
 		return employeeList;
 	}
+
+
+
+
+	public List<Employee_Master> getAllEmployee() {
+		List<Employee_Master> employeeList = new ArrayList<>();
+		try{
+			 employeeList = employeeRepository.getAllEmployee();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return employeeList;
+	}
+
+
 
 	// Database based : Fetching data on the basis of SQL querie logic
 	@Deprecated

@@ -48,6 +48,38 @@ public class EmployeeRepository {
 
 	// ****************** Calling from FrontController - Start - ********************** //
 
+	@Transactional
+	@Deprecated
+	public List<Employee_Master> getEmployeeDetails(){
+		try {
+			employeeList = new ArrayList<>();
+
+			//Using HCQL, Order Class
+			criteria = getCurrentSession().createCriteria(Employee_Master.class);
+			criteria.addOrder(Order.asc("employeeId"));
+			employeeList = criteria.list();
+		}catch(NoEmployeeDataFoundException ndf) {
+			ndf.printStackTrace();
+		}catch(RecordNotFoundNullPointerException rnfnpe) {
+			rnfnpe.printStackTrace();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		finally {
+
+		}
+		return employeeList ;
+	}
+
+
+
+
+
+
+
+
+
+
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Employee_Master> getAllEmployee() {
@@ -71,28 +103,7 @@ public class EmployeeRepository {
 		return employeeList;
 	}
 
-	@Transactional
-	@Deprecated
-	public List<Employee_Master> getEmployeeDetails(){
-		try {
-				employeeList = new ArrayList<>();
 
-				//Using HCQL, Order Class
-				criteria = getCurrentSession().createCriteria(Employee_Master.class);
-				criteria.addOrder(Order.asc("employeeId"));
-				employeeList = criteria.list();
-		}catch(NoEmployeeDataFoundException ndf) {
-			ndf.printStackTrace();
-		}catch(RecordNotFoundNullPointerException rnfnpe) {
-			rnfnpe.printStackTrace();
-		}catch(Exception ex){
-			 ex.printStackTrace();
-		}
-		finally {
-
-		}
-		return employeeList ;
-	}
 
 
 	@SuppressWarnings("unchecked")
