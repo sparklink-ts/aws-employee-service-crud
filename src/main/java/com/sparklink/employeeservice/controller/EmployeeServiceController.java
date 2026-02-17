@@ -162,6 +162,7 @@ public class EmployeeServiceController {
 	// ****************** @NamedQueries ********************** //
 
 	@Transactional
+	@Deprecated
 	//@GetMapping("/getEmployeeDetailsByName/{employeeName}")
 	@GetMapping("${rest.get.mapping.getEmployeeDetailsByName}")
 	public List<Employee_Master> getEmployeeDetailsByName(@PathVariable String employeeName) {
