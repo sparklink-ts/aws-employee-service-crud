@@ -1,16 +1,16 @@
 package com.sparklink.employeeservice.model;
 
-/*import javax.persistence.Column;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;*/
+import javax.persistence.Table;
 
 
-/*@NamedQueries(
+@NamedQueries(
 		{
 				@NamedQuery(
 						name = "@HQL_Find_Employee_Complete_Details",
@@ -20,7 +20,7 @@ import javax.persistence.Table;*/
 				)
 
 		}
-)*/
+)
 
 
 /*@Entity

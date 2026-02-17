@@ -48,6 +48,8 @@ public class EmployeeRepository {
 
 	// ****************** Calling from FrontController - Start - ********************** //
 
+
+
 	@Transactional
 	@Deprecated
 	public List<Employee_Master> getEmployeeDetails(){
