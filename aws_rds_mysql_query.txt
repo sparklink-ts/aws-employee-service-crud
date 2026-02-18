@@ -31,8 +31,8 @@ show tables;
 
 CREATE TABLE employee_master(employeeId int NOT NULL AUTO_INCREMENT, employeeName varchar(100) NOT NULL, employeeSalary float(35) NOT NULL, employeeAge int NOT NULL, employeeDesignation varchar(100), employeeAddress varchar(100) NOT NULL, employeeType varchar(50), employeeGrade varchar(50), PRIMARY KEY (employeeId));
 desc employee_master;
-insert into employee_master values (1000,"Mithun Majumdar", "150000", "42", "Tech Lead", "Pune,MH-12,India", "Permanent", "Grade 1");
-insert into employee_master values (1001,"Moumita Guha", "100000", "32", "Design Lead", "Mumbai,MH-01,India", "Permanent", "Grade 4");
+insert into employee_master values (1000,"Sandeep Kumar", "150000", "42", "Tech Lead", "Pune,MH-12,India", "Permanent", "Grade 1");
+insert into employee_master values (1001,"Payal Ghosh", "100000", "32", "Design Lead", "Mumbai,MH-01,India", "Permanent", "Grade 4");
 insert into employee_master values (1032,"Rahul Patil", "70000", "36", "HR Lead", "Nagpur,MH-31,India", "Permanent", "Grade 2");
 INSERT INTO employee_master VALUES (1033,'Rahul Kumar',170000,46,'HR Associate','Delhi,DEL-45,India', "Permanent", "Grade 4");
 INSERT INTO employee_master VALUES (1034,'Abhishek Ghosh',1500000,36,'Sr. Software Engineer','Kolkata', "Contractual", "Grade 4");
