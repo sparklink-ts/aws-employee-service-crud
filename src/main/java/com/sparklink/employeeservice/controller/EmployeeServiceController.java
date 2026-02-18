@@ -30,7 +30,6 @@ public class EmployeeServiceController {
 	@Autowired
 	private EmployeeService employeeService;
 
-
 	//********************************* AWS Employee Service Blue Green Deployment Start *********************************************//
 
 	//@GetMapping("/getEmployeeServicesDeployments")
