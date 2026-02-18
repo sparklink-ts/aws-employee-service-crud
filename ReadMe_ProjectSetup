@@ -84,6 +84,11 @@ Url
 	Private Facing Port - 9000 : http://localhost:9000/rest-api-employee-services/getEmployeeServicesDeployments
 	                             http://localhost:9000/rest-api-employee-services/getEmployeeDetails
 
+    AWS Elastic Beanstalk
+    Public Facing Port - 5000 : http://localhost:5000/rest-api-employee-services/getEmployeeServicesDeployments
+                                http://localhost:5000/rest-api-employee-services/getEmployeeDetails
+
+
     //***********  AWS REST API Call *********************//
 
 
