@@ -36,7 +36,7 @@ public class EmployeeServiceController {
 	//@GetMapping("/getEmployeeServicesDeployments")
 	@GetMapping("${rest.get.mapping.getEmployeeServicesDeployments}")
 	public String getEmployeeServicesDeployments() {
-		return "AWS - Employee Services CICD Working Fine ...";
+		return "AWS - Employee Services CICD Working Fine : Updated ...";
 	}
 
 	@Transactional
