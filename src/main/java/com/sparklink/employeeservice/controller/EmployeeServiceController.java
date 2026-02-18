@@ -30,13 +30,12 @@ public class EmployeeServiceController {
 	@Autowired
 	private EmployeeService employeeService;
 
-
 	//********************************* AWS Employee Service Blue Green Deployment Start *********************************************//
 
 	//@GetMapping("/getEmployeeServicesDeployments")
 	@GetMapping("${rest.get.mapping.getEmployeeServicesDeployments}")
 	public String getEmployeeServicesDeployments() {
-		return "AWS - Employee Services CICD Working Fine : Updated ...";
+		return "AWS - Employee Services CICD Working Fine :  ...";
 	}
 
 	@Transactional
