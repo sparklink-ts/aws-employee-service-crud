@@ -32,6 +32,7 @@ public class EmployeeServiceController {
 
 	//********************************* AWS Employee Service Blue Green Deployment Start *********************************************//
 
+
 	//@GetMapping("/getEmployeeServicesDeployments")
 	@GetMapping("${rest.get.mapping.getEmployeeServicesDeployments}")
 	public String getEmployeeServicesDeployments() {
