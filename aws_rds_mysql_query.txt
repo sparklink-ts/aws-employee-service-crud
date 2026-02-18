@@ -37,6 +37,8 @@ insert into employee_master values (1032,"Rahul Patil", "70000", "36", "HR Lead"
 INSERT INTO employee_master VALUES (1033,'Rahul Kumar',170000,46,'HR Associate','Delhi,DEL-45,India', "Permanent", "Grade 4");
 INSERT INTO employee_master VALUES (1034,'Abhishek Ghosh',1500000,36,'Sr. Software Engineer','Kolkata', "Contractual", "Grade 4");
 
+INSERT INTO employee_master VALUES (1002,'Abhinav Majumdar',2500000,56,'Sr. Architects','Pune', "Permanent", "Grade 1");
+
 select * from employee_master;
 
 create user 'sparklink'@'172.31.%.%' identified with mysql_native_password by 'sparklink';
