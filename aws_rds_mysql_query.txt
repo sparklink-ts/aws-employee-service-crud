@@ -1,29 +1,13 @@
 
-                AWS - RDS MySQL Database Queries
-                ---------------------------------
-
-   Database : sparklink_db
-   Table name : employee_master
-
-SpringBoot
-RestController : CRUD @PatchMapping
-Hibernate : CRUD, @NamedQueries
-MySQL: DB connection
-Spring Exceptions
-Spring JUnit Testing
-
-
-
-
-
-application.properties
-
-	make  spring.jpa.hibernate.ddl-auto=create    only for first time for creating User table in CustomerData
+                AWS - RDS - MySQL Database Queries
+                ----------------------------------
 
 Database : MySQL
 
-SQL Queries :
+Database : sparklink_db
+Table name : employee_master
 
+SQL Queries :
 
 create database sparklink_db;
 use sparklink_db;
@@ -35,14 +19,13 @@ INSERT INTO employee_master values (1000,"Sandeep Kumar", "150000", "42", "Tech 
 INSERT INTO employee_master values (1001,"Payal Ghosh", "100000", "32", "Design Lead", "Mumbai,MH-01,India", "Permanent", "Grade 4");
 INSERT INTO employee_master VALUES (1002,'Abhinav Majumdar',2500000,56,'Sr. Architects','Pune', "Permanent", "Grade 1");
 INSERT INTO employee_master VALUES (1004,'Santanu Roy',5500000,56,'Product Manager','Pune', "Permanent", "Grade 1");
-insert into employee_master values (1032,"Rahul Patil", "70000", "36", "HR Lead", "Nagpur,MH-31,India", "Permanent", "Grade 2");
-INSERT INTO employee_master VALUES (1033,'Rahul Kumar',170000,46,'HR Associate','Delhi,DEL-45,India', "Permanent", "Grade 4");
-INSERT INTO employee_master VALUES (1034,'Abhishek Ghosh',1500000,36,'Sr. Software Engineer','Kolkata', "Contractual", "Grade 4");
-
-
-
+insert into employee_master values (1005,"Rahul Patil", "70000", "36", "HR Lead", "Nagpur,MH-31,India", "Permanent", "Grade 2");
+INSERT INTO employee_master VALUES (1006,'Rahul Kumar',170000,46,'HR Associate','Delhi,DEL-45,India', "Permanent", "Grade 4");
+INSERT INTO employee_master VALUES (1007,'Abhishek Ghosh',1500000,36,'Sr. Software Engineer','Kolkata', "Contractual", "Grade 4");
+INSERT INTO employee_master VALUES (1007,'Mousumi Rai',1000000,26,'Sr. Software Engineer','Bangalore', "Contractual", "Grade 4");
 
 SELECT * FROM employee_master;
+
 
 create user 'sparklink'@'172.31.%.%' identified with mysql_native_password by 'sparklink';
 grant all privileges on sparklink_db.* to 'sparklink'@'172.31.%.%';
