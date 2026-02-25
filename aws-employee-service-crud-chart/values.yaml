@@ -6,12 +6,12 @@ mysql:
     ipv4:
       address:
         db:
-          dynamic: 192:168:152:13
+          dynamic: 192:168:192:13
 
 
-employeeservice:
+awsemployeeservicecrud:
   image:
-    repository: employee-service-v2.0.0-snapshot
+    repository: aws-employee-service-crud
     pullPolicy: IfNotPresent
     tag: latest
 

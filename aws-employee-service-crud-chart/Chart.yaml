@@ -1,6 +1,6 @@
 apiVersion: v2
-name: employee-service-chart
-description: A Helm chart for employee-service - Kubernetes
+name: aws-employee-service-crud-chart
+description: A Helm chart for aws-employee-service-crud - Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
 #

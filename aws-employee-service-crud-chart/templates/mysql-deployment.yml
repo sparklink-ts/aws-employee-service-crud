@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-#  name: employee-service-k8s-mysql-deployment
-  name: {{ .Release.Name }}-employee-service-k8s-mysql-deployment
+#  name: aws-employee-service-crud-k8s-mysql-deployment
+  name: {{ .Release.Name }}-aws-employee-service-crud-k8s-mysql-deployment
 spec:
   replicas: 1
   selector:
@@ -16,8 +16,8 @@ spec:
         app: {{ .Release.Name }}-mysql # This selector name should match with the mysql-service selector-app section
     spec:
       containers:
-#          - name: employee-service-k8s-mysql-container
-          - name: {{ .Release.Name }}-employee-service-k8s-mysql-container
+#          - name: aws-employee-service-crud-k8s-mysql-container
+          - name: {{ .Release.Name }}-aws-employee-service-crud-k8s-mysql-container
             image: mysql:latest
             env:
               - name: MYSQL_ROOT_PASSWORD

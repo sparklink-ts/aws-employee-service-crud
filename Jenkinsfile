@@ -6,7 +6,7 @@
     stages{
         stage('Build maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd8a7d834-0955-4bfe-a691-25bbca4ab26b', url: 'https://sparklink-ts@github.com/sparklink-ts/employee-service.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd8a7d834-0955-4bfe-a691-25bbca4ab26b', url: 'https://sparklink-ts@github.com/sparklink-ts/aws-employee-service-crud.git']]])
                 bat 'mvn clean install'
             }
         }
@@ -25,8 +25,8 @@
         stage('Build docker image'){
             steps{
                          // Docker image name ::  devops-integration
-                         bat 'docker build -t employee-service-v2.0.0-snapshot:latest .'
-                         //bat 'docker build -t employee-service-v2.0.0-snapshot .'
+                         bat 'docker build -t aws-employee-service-crud:latest .'
+                         //bat 'docker build -t aws-employee-service-crud .'
             }
         }
 /*
@@ -41,8 +41,8 @@
             steps{
                     // docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
                     // docker image tag <image_name>:<tag_name>  <repository_name>/<new_image_name>:<tag_name>
-                    bat 'docker image tag employee-service-v2.0.0-snapshot:latest sparklinkts/employee-service-v2.0.0-snapshot:latest'
-                    //bat 'docker image tag employee-service-v2.0.0-snapshot:latest sparklinkts/employee-service-v2.0.0-snapshot:latest'
+                    bat 'docker image tag aws-employee-service-crud:latest sparklinkts/aws-employee-service-crud:latest'
+                    //bat 'docker image tag aws-employee-service-crud:latest sparklinkts/aws-employee-service-crud:latest'
             }
         }
 /*
@@ -50,8 +50,8 @@
         cker hub image to the DockerHub'){
             steps{
                     // docker push <repository_name>/<new_image_name>:<tag_name>
-                    bat 'docker push sparklinkts/employee-service-v2.0.0-snapshot:latest'
-                    //bat 'docker push sparklinkts/employee-service-v2.0.0-snapshot:latest'
+                    bat 'docker push sparklinkts/aws-employee-service-crud:latest'
+                    //bat 'docker push sparklinkts/aws-employee-service-crud:latest'
             }
         }
  */
@@ -60,7 +60,7 @@
                     // Deploy to k8s
                     bat 'kubectl apply -f deploymentservice.yaml'
                     // Deploy to k8s using Hellm
-                    //bat 'helm install dev-employee-v2-6 employee-service-chart'
+                    //bat 'helm install dev-employee-v2-6 aws-employee-service-crud-chart'
             }
         }
 

@@ -6,7 +6,7 @@
     stages{
         stage('Build maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd8a7d834-0955-4bfe-a691-25bbca4ab26b', url: 'https://sparklink-ts@github.com/sparklink-ts/employee-service.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'd8a7d834-0955-4bfe-a691-25bbca4ab26b', url: 'https://sparklink-ts@github.com/sparklink-ts/aws-employee-service-crud.git']]])
                 bat 'mvn clean install'
             }
         }
@@ -30,16 +30,16 @@
             steps{
                     // docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
                     // docker image tag <image_name>:<tag_name>  <repository_name>/<new_image_name>:<tag_name>
-                    bat 'docker image tag employee-service-v2.0.0-snapshot:latest sparklinkts/employee-service-v2.0.0-snapshot:latest'
-                    //bat 'docker image tag employee-service-v2.0.0-snapshot:latest sparklinkts/employee-service-v2.0.0-snapshot:latest'
+                    bat 'docker image tag aws-employee-service-crud:latest sparklinkts/aws-employee-service-crud:latest'
+                    //bat 'docker image tag aws-employee-service-crud:latest sparklinkts/aws-employee-service-crud:latest'
             }
         }
 
         stage('Push docker hub image to the DockerHub'){
             steps{
                     // docker push <repository_name>/<new_image_name>:<tag_name>
-                    bat 'docker push sparklinkts/employee-service-v2.0.0-snapshot:latest'
-                    //bat 'docker push sparklinkts/employee-service-v2.0.0-snapshot:latest'
+                    bat 'docker push sparklinkts/aws-employee-service-crud:latest'
+                    //bat 'docker push sparklinkts/aws-employee-service-crud:latest'
             }
         }
  */

@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile-MySQL
 #    image: mysql:latest
-    container_name: employee-service-mysql-container
+    container_name: aws-employee-service-crud-mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -17,12 +17,12 @@ services:
     networks:
       - spring-mysql-network
 
-  v2.0.0-snapshot:    # This is for employee-service : <application-name>-2.0.0-snapshot like  employee-service-2.0.0-snapshot
+  v2.0.0-snapshot:    # This is for aws-employee-service-crud : <application-name> like  aws-employee-service-crud
     build:
       context: .
       dockerfile: Dockerfile
-    image: employee-service-v2.0.0-snapshot
-    container_name: employee-service-container
+    image: aws-employee-service-crud
+    container_name: aws-employee-service-crud-container
     depends_on:
       - mysql
     ports:
