@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+#  name: aws-employee-service-crud-k8s-deployment
+  name: {{ .Release.Name }}-aws-employee-service-crud-k8s-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+#      app: aws-employee-service-crud
+      app: {{ .Release.Name }}-aws-employee-service-crud
+  template:
+    metadata:
+      labels:
+#        app: aws-employee-service-crud # This selector name should match with the mysql-service selector-app section
+        app: {{ .Release.Name }}-aws-employee-service-crud # This selector name should match with the mysql-service selector-app section
+    spec:
+      containers:
+#          - name: aws-employee-service-crud-k8s-container
+          - name: {{ .Release.Name }}-aws-employee-service-crud-k8s-container
+            image: {{ .Values.awsemployeeservicecrud.image.repository }}:{{ .Values.awsemployeeservicecrud.image.tag }}
+            imagePullPolicy: {{ .Values.awsemployeeservicecrud.image.pullPolicy }}
+            ports:
+              - containerPort: 8080
+            env:
+              - name: SPRING_DATASOURCE_URL
+                value: {{ include "aws-employee-service-crud.fullMySQLConnectionURL" . | quote }} # get the values from _helpers.tpl
+              - name: SPRING_DATASOURCE_USERNAME
+                valueFrom:
+                  secretKeyRef:
+#                    name: mysql-username
+                    name: {{ .Release.Name }}-mysql-username
+                    key: username
+              - name: SPRING_DATASOURCE_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+#                    name: mysql-password
+                    name: {{ .Release.Name }}-mysql-password
+                    key: password
