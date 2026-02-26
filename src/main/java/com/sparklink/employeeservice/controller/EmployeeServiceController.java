@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@CrossOrigin(origins = "http://localhost:4200")
 //@CrossOrigin(origins = {"${settings.cors_origin}"})
 //@CrossOrigin(origins = {"${settings.cors_origin_localhost}", "${settings.cors_origin_localhost_global}", "${settings.cors_origin}"})
-@CrossOrigin(origins = {"${settings.cors_origin_localhost}", "${settings.cors_origin_localhost_global}", "${settings.cors_origin_client_global}","${settings.cors_origin_localhost_k8s}", "${settings.cors_origin_client_k8s}", "${settings.cors_origin_address_dynamic}", "${settings.cors_origin_address_dynamic_k8s}"})
+@CrossOrigin(origins = {"${settings.cors_origin_localhost}", "${settings.cors_origin_localhost_global}", "${settings.cors_origin_client_global}","${settings.cors_origin_client_global_aws}","${settings.cors_origin_localhost_k8s}", "${settings.cors_origin_client_k8s}", "${settings.cors_origin_address_dynamic}", "${settings.cors_origin_address_dynamic_k8s}"})
 @RestController
 //@RequestMapping(value="/rest-api-employee-services")
 @RequestMapping(value = {"${rest.request.mapping.rest-api-employee-services}"})
