@@ -36,7 +36,7 @@ public class EmployeeServiceController {
 	//@GetMapping("/getEmployeeServicesDeployments")
 	@GetMapping("${rest.get.mapping.getEmployeeServicesDeployments}")
 	public String getEmployeeServicesDeployments() {
-		return "Employee Services Microservice with Spring Boot CICD Devlopment, Build and Deployment Working Fine With AWS Services : RDS - MySQL Database, S3, EC2, Elastic Beanstalk, Code Pipeline, Code Build and SNS ...";
+		return "Employee Services Microservice with Spring Boot CICD Devlopment, Build and Deployment Working Fine With AWS Services : RDS - MySQL Database, ECR, ECS, Code Build  ...";
 	}
 
 	@Transactional
