@@ -27,8 +27,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = {"${rest.request.mapping.rest-api-employee-services}"})
 public class EmployeeServiceController {
 
-
-
 	@Autowired
 	private EmployeeService employeeService;
 
